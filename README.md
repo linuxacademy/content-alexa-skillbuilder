@@ -16,7 +16,7 @@ This readme assumes you have your developer environment ready to go and that you
 
 ### Getting Started with Ask cli
 
-ask new --url https://github.com/linuxacademy/content-alexa-skillbuilder.git
+```ask new --url https://github.com/linuxacademy/content-alexa-skillbuilder.git
 ? Please type in your new skill name, alphanumeric only: example-skill
 [Warn]: Downloading skill template from unofficial resource. Please make
 sure you understand what each script is doing to best protect yourself
@@ -24,7 +24,7 @@ from malicious usage
 ? Would you still like to continue execution ? Yes
 Skill The Linux Academy Lab Skill has been created based on the chosen template
 In this example, ASK CLI prompts for a skill name. You can provide a skill name with the --skill-name or -n parameter.
-
+```
 ### Without using ask new Started with Ask cli
 1. **Make sure** you are running the latest version of the CLI
 
