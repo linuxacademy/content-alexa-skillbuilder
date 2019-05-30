@@ -5,11 +5,11 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open hello world",
-            "hello",
+            "Alexa open linux academy lab",
+            "linux academy",
             "help"
           ],
-          "name": "skill-sample-nodejs-hello-world",
+          "name": "lalabskillbuilder",
           "description": "Sample Full Description"
         }
       },
@@ -22,7 +22,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "ask-custom-skill-sample-nodejs-hello-world-default"
+          "uri": "lalabskillbuilder"
         }
       }
     },
