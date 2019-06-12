@@ -90,9 +90,23 @@
       .withSimpleCard(<span class="hljs-string">'Hello World'</span>, speechText)
       .getResponse();
   },
-};
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>#<code>HelpIntentHandler</code>
+The help intent handler will helpe the user when they ask for help</p>
 
-<span class="hljs-keyword">const</span> HelpIntentHandler = {
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> HelpIntentHandler = {
   canHandle(handlerInput) {
     <span class="hljs-keyword">return</span> handlerInput.requestEnvelope.request.type === <span class="hljs-string">'IntentRequest'</span>
       &amp;&amp; handlerInput.requestEnvelope.request.intent.name === <span class="hljs-string">'AMAZON.HelpIntent'</span>;
@@ -152,11 +166,11 @@
         </li>
         
         
-        <li id="section-4">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>The intent reflector is used for interaction model testing and debugging.
 It will simply repeat the intent the user said. You can create custom handlers
