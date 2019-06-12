@@ -37,7 +37,8 @@ const HelloWorldIntentHandler = {
       .getResponse();
   },
 };
-
+// #`HelpIntentHandler`
+// The help intent handler will helpe the user when they ask for help
 const HelpIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
