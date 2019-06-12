@@ -4,7 +4,8 @@
 // # Require the Ask SDK
 
 const Alexa = require('ask-sdk-core');
-// # lauch request handler 
+// # `launch request handler`
+// The launch request handler is used to start the skill
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -20,6 +21,8 @@ const LaunchRequestHandler = {
   },
 };
 
+// # `HelloWorldIntent` 
+// Hello World Intent Handler Handles all IntentRequest and says Hello world when invoked 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
