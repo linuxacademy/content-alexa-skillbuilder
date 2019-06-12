@@ -4,7 +4,7 @@
 // # Require the Ask SDK
 
 const Alexa = require('ask-sdk-core');
-
+// # lauch request handler 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
