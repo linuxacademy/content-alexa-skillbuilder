@@ -36,7 +36,7 @@ In this example, ASK CLI prompts for a skill name. You can provide a skill name 
 2. **Clone** the repository and navigate into the skill's root directory.
 
 	```bash
-	ask new --url  https://github.com/linuxacademy/content-alexa-skillbuilder.git --skill-name LaLabSkillBuilder
+	ask new --url  https://github.com/linuxacademy/content-alexa-skillbuilder.git --skill-name LaLabSkillBuilder1
 	cd LaLabSkillBuilder
 	```
 

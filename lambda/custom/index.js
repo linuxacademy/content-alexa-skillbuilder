@@ -90,15 +90,35 @@ const ErrorHandler = {
   },
 };
 
+
+// The intent reflector is used for interaction model testing and debugging.
+// It will simply repeat the intent the user said. You can create custom handlers
+// for your intents by defining them above, then also adding them to the request
+// handler chain below.
+const IntentReflectorHandler = {
+  canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest';
+  },
+  handle(handlerInput) {
+      const intentName = handlerInput.requestEnvelope.request.intent.name;
+      const speechText = `You just triggered ${intentName}`;
+
+      return handlerInput.responseBuilder
+          .speak(speechText)
+          .getResponse();
+  }
+};
+
 const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    HelloWorldIntentHandler,
+    DiscoverIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    SessionEndedRequestHandler,
+    IntentReflectorHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
