@@ -101,6 +101,8 @@ ASK CLI **will create the skill and the Lambda function for you**. The Lambda fu
 	```bash
 	ask deploy
 	```
+## Anotated Source Code 
 
-
+Alexa Skill Builder has annotaed source code using Docco this provides and indepth look at the source code to help you understan the lab. 
+[View the Annotated source code3](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/index.html)
 
