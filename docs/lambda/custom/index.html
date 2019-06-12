@@ -62,7 +62,8 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> LaunchRequestHandler = {
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">const</span> LaunchRequestHandler = {
   canHandle(handlerInput) {
     <span class="hljs-keyword">return</span> handlerInput.requestEnvelope.request.type === <span class="hljs-string">'LaunchRequest'</span>;
   },
@@ -77,6 +78,9 @@
   },
 };
 
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
 <span class="hljs-keyword">const</span> HelloWorldIntentHandler = {
   canHandle(handlerInput) {
     <span class="hljs-keyword">return</span> handlerInput.requestEnvelope.request.type === <span class="hljs-string">'IntentRequest'</span>
@@ -101,8 +105,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>#<code>HelpIntentHandler</code>
-The help intent handler will helpe the user when they ask for help</p>
+              <h1 id="helpintenthandler"><code>HelpIntentHandler</code></h1>
+<p>The help intent handler will helpe the user when they ask for help</p>
 
             </div>
             
