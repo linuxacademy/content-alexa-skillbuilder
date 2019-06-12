@@ -3,7 +3,11 @@
 <html>
 <head>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <title>index.js</title>
+=======
+  <title>Require the Ask SDK</title>
+>>>>>>> Stashed changes
 =======
   <title>Require the Ask SDK</title>
 >>>>>>> Stashed changes
@@ -18,12 +22,15 @@
     <ul class="sections">
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           <li id="title">
               <div class="annotation">
                   <h1>index.js</h1>
               </div>
           </li>
         
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         
@@ -50,7 +57,11 @@
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               <h2 id="require-the-ask-sdk">Require the Ask SDK</h2>
+=======
+              <h1 id="require-the-ask-sdk">Require the Ask SDK</h1>
+>>>>>>> Stashed changes
 =======
               <h1 id="require-the-ask-sdk">Require the Ask SDK</h1>
 >>>>>>> Stashed changes
@@ -70,9 +81,14 @@
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               <h2 id="lauch-request-handler">lauch request handler</h2>
 =======
               <h1 id="lauch-request-handler">lauch request handler</h1>
+>>>>>>> Stashed changes
+=======
+              <h1 id="launch-request-handler"><code>launch request handler</code></h1>
+<p>The launch request handler is used to start the skill</p>
 >>>>>>> Stashed changes
 
             </div>
@@ -90,9 +106,29 @@
       .withSimpleCard(<span class="hljs-string">'Hello World'</span>, speechText)
       .getResponse();
   },
+<<<<<<< Updated upstream
 };
 
 <span class="hljs-keyword">const</span> HelloWorldIntentHandler = {
+=======
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <h1 id="helloworldintent"><code>HelloWorldIntent</code></h1>
+<p>Hello World Intent Handler Handles all IntentRequest and says Hello world when invoked </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">const</span> HelloWorldIntentHandler = {
+>>>>>>> Stashed changes
   canHandle(handlerInput) {
     <span class="hljs-keyword">return</span> handlerInput.requestEnvelope.request.type === <span class="hljs-string">'IntentRequest'</span>
       &amp;&amp; handlerInput.requestEnvelope.request.intent.name === <span class="hljs-string">'HelloWorldIntent'</span>;
@@ -167,11 +203,19 @@
         </li>
         
         
+<<<<<<< Updated upstream
         <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
+=======
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+>>>>>>> Stashed changes
               </div>
               <p>The intent reflector is used for interaction model testing and debugging.
 It will simply repeat the intent the user said. You can create custom handlers
