@@ -106,7 +106,7 @@ ask init --no-browser
 you can log in to to see the lambda code with the information provided in the lab. 
 The deploy above creates a skill in your developer account with an enpoint in the Linux Academy AWS Envrionment. 
 
-* If you whish to use Alexa Hosted envrionment you can create a skill and select Alexa hosted Instructions are [Here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html)
+* If you whish to use Alexa Hosted envrionment you can create a skill and select **"Alexa hosted"**  Instructions are [Here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html)
 
 * If you are using Alexa Hosted and you want to follow along in the Lab Video you will need to copy the JSON for interaction model into the skill you create and the lambda code into the index.js and you will then have all the required components to follow along. 
 
