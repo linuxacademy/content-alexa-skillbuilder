@@ -21,7 +21,9 @@ Or you use the Linux Academy Lab Environment
 ### Getting Started
 
 ### Optional mirror lab branch for creating your environment for lab
+
 ---
+
 ### Details
 
 1. **Clone** Lab Branch and checkout 
@@ -32,7 +34,8 @@ git checkout intentsLab
 ```
  1.  **Create Repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
 
-    * **Mirror** Lab Branch and checkout 
+    * __Mirror__ Lab Branch and checkout 
+
     ```
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
     git remote set-url origin https://github.com/AiwarriorLA/LaIntentsLab.git
@@ -50,6 +53,7 @@ git checkout intentsLab
     git clone https://github.com/AiwarriorLA/LaIntentsLab.git .
     ```
     * Deploy in your own AWS Env
+
     ```
     ask deploy
     ``` 
@@ -57,24 +61,32 @@ git checkout intentsLab
 
 3. Or use **Ask CLI** 
     * Navigate to working dir in my case its called labs
+
     ``` mkdir labs ```
+
     * Use Ask CLI to create Alexa Skill 
+
     ```
      ask new --url https://github.com/AiwarriorLA/LaIntentsLab.git  --skill-name LaLabIntents
     ```
+
     * Deploy in your own AWS Env
+
     ```
     ask deploy
     ``` 
 ---
 
-### Note Using EC2 Instance and LA Lab Environment (avoiding Cost of doing lab)
+### Note Using EC2 Instance and Linux Academy Lab Environment (avoiding cost of doing lab)
 
 Open an SSH client. 
 Connect to your instance using the IP provided in the lab
+
 ```ssh  cloud_user@<IP_ADDRESS>```
+
 use password provided for the ec2 instance when prompted. 
 The AWS CLI is configured for you so this step is **not** required 
+
 Initilize the ask cli 
 ```
 ask init --no-browser
@@ -89,15 +101,15 @@ ask init --no-browser
 
 ```ask deploy```
 
-Your lab is now configured with the endpoint set to the Linux Academy Lab AWS Envrionment
+* Your lab is now configured with the endpoint set to the Linux Academy Lab AWS Envrionment
 you can log in to to see the lambda code with the information provided in the lab. 
 The deploy above creates a skill in your developer account with an enpoint in the Linux Academy AWS Envrionment. 
 
-If you which to use Alexa Hosted envrionment you can create a skill and select Alexa hosted Instructions are [Here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html)
+* If you whish to use Alexa Hosted envrionment you can create a skill and select Alexa hosted Instructions are [Here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html)
 
-If you are using Alexa Hosted and you want to follow along in the Lab Video you will need to copy the JSON for interaction model into the skill you create and the lambda code into the index.js and you will then have all the required components to follow along. 
+* If you are using Alexa Hosted and you want to follow along in the Lab Video you will need to copy the JSON for interaction model into the skill you create and the lambda code into the index.js and you will then have all the required components to follow along. 
 
-For some labs Alexa Hosted is not an options as we will be using features not currently offered in the ALexa Developer console at this time. 
+* For some labs Alexa Hosted is not an options as we will be using features not currently offered in the ALexa Developer console at this time. 
 
 **Caution** 
 If you use Linux Academy Lab Enviornment your skill will not have and endpoint when the lab ends and any modifications made during the lab will be lost. 
@@ -108,17 +120,18 @@ this can be done with the ask cli or by logging into the Alexa Developer console
 
 If you want to retain access to the lab and its endpoint clone the repo and deploy in your own AWS Envrionment. 
 
-**Warning** 
-
+---
 **Warning** 
 
 If you lauch the lab inside of Linux Academy using the IP address link you will have difficulty copy and pasting the ask init token if you want to use the linux Academt to ssh use the instant terminal and you will be able to copy and past. The instructions and notes are [Here](https://support.linuxacademy.com/hc/en-us/articles/360026736411-How-do-I-Copy-and-Paste-in-Hands-On-Labs-)
 
-### Testing
+---
+
+### Test you have everything setup 
 
 1. To test, the skill needs to be enabled.  From the developer console, open your skill and click the Test tab.  Ensure the skill is available for testing in Development.
 
-2. Simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
+2. Or Simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
 
 	```bash
 	 ask simulate -l en-US -t "start linux academy lab"
@@ -134,7 +147,7 @@ If you lauch the lab inside of Linux Academy using the IP address link you will 
 	```text
 	Alexa, start linux academy lab
 	```
-## Customization
+## To modify the skill details by changing the skill.json file. 
 
 1. ```./skill.json```
 
@@ -157,7 +170,7 @@ If you lauch the lab inside of Linux Academy using the IP address link you will 
 	```bash
 	ask deploy
 	```
-## Anotated Source Code 
+## View Anotated Source Code 
 
 Alexa Skill Builder has annotaed source code using Docco this provides and indepth look at the source code to help you understan the lab. 
 [View the Annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/)
