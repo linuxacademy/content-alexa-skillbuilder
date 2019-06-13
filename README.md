@@ -1,6 +1,6 @@
 # content-alexa-skillbuilder
 # Build The Linux Academy Lab Skill
-<img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
+<img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Setup w/ ASK CLI
 
