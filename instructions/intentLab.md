@@ -1,8 +1,7 @@
-# content-alexa-skillbuilder Intent Lab
-# Build The Linux Academy Lab Skill
+# Alexa Skill Building Intent Lab with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
-## Setup with ASK CLI
+## Preparing for the Lab
 
 ### About
 This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (Command Line Interface) Tools, [AWS](https://aws.amazon.com/), and the [ASK Developer Portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs). 
@@ -18,14 +17,12 @@ Or you use the Linux Academy Lab Environment
 
 * The following steps assume you have configured your AWS CLI [AWS CLI Instructions](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) and are working in your own envirnment if you wish to use the lab environment use the EC2 Instance created for you when you launch the lab on Linux Academy. [EC2 Envrionment](# Note Using EC2 Instance and LA Lab Environment (avoiding Cost of doing lab))
 
-### Getting Started
+## Getting Started
 
-### Optional mirror lab branch for creating your environment for lab
-
----
+Optional steps for creating your own envrionment by mirroring lab branch for creating your developement environment for lab
 
 ### Details
-
+---
 1. **Clone** Lab Branch and checkout 
 ```
 git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
@@ -77,9 +74,10 @@ git checkout intentsLab
     ``` 
 ---
 
+## Using Linux Academy Lab Envrionment
 ### Note Using EC2 Instance and Linux Academy Lab Environment (avoiding cost of doing lab)
 
-Open an SSH client. 
+1. Open an SSH client. 
 Connect to your instance using the IP provided in the lab
 
 ```ssh  cloud_user@<IP_ADDRESS>```
@@ -87,7 +85,7 @@ Connect to your instance using the IP provided in the lab
 use password provided for the ec2 instance when prompted. 
 The AWS CLI is configured for you so this step is **not** required 
 
-Initilize the ask cli 
+2. Initilize the ask cli 
 ```
 ask init --no-browser
 ```
@@ -97,7 +95,7 @@ ask init --no-browser
 
  ```git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git```
 
- Deploy the skill into the lab envrionment 
+ 3. Deploy the skill into the lab envrionment 
 
 ```ask deploy```
 
@@ -111,7 +109,8 @@ The deploy above creates a skill in your developer account with an enpoint in th
 
 * For some labs Alexa Hosted is not an options as we will be using features not currently offered in the ALexa Developer console at this time. 
 
-**Caution** 
+**Caution:** 
+
 If you use Linux Academy Lab Enviornment your skill will not have and endpoint when the lab ends and any modifications made during the lab will be lost. 
 it is advised you clone the repo into your own account if you want to save any changes you have made. 
 
@@ -121,7 +120,7 @@ this can be done with the ask cli or by logging into the Alexa Developer console
 If you want to retain access to the lab and its endpoint clone the repo and deploy in your own AWS Envrionment. 
 
 ---
-**Warning** 
+**Warning:** 
 
 If you lauch the lab inside of Linux Academy using the IP address link you will have difficulty copy and pasting the ask init token if you want to use the linux Academt to ssh use the instant terminal and you will be able to copy and past. The instructions and notes are [Here](https://support.linuxacademy.com/hc/en-us/articles/360026736411-How-do-I-Copy-and-Paste-in-Hands-On-Labs-)
 
