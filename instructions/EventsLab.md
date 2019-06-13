@@ -181,11 +181,11 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
 
 
-### Intents and there functions 
+### Creating Events and handling them
 
 TBD add JSON Changes to en-US.json which add events to example skill 
 
 Add changes to index.js to add the event handling 
 
-? practive events vs https://developer.amazon.com/blogs/alexa/post/7822f3ee-1735-4eaa-9aa6-5b8e39953c07/proactiveeventsapi-launch-announcement
+? proactive events vs https://developer.amazon.com/blogs/alexa/post/7822f3ee-1735-4eaa-9aa6-5b8e39953c07/proactiveeventsapi-launch-announcement
 https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#media-content
