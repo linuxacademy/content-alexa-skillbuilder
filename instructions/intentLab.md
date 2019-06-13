@@ -28,11 +28,12 @@ Or you use the Linux Academy Lab Environment
 
 1. **Clone** Lab Branch and checkout 
 
-```
-git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
-git checkout intentsLab
-```
- 1.  **Create Repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
+
+'git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git'
+'git checkout intentsLab'
+
+
+ 1.  **Create repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
 
     * Mirror lab branch and checkout
 
