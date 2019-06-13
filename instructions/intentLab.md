@@ -31,7 +31,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     ```
 
 2.  **Create repo for your own project**. (Here are [instructions for creating a repo](https://help.github.com/en/articles/create-a-repo).)
-
+    **The Commands Below are for my REPO please Change to the one you crated DO NOT JUST COPY AND PAST** 
     * Mirror lab branch and checkout:
 
     ```

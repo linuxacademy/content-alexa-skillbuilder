@@ -1,11 +1,15 @@
-# content-alexa-skillbuilder
+# Alexa Skill Building with Linux Academy 
+This github repostory is a companion to the the Certified Alexa Skill Building course at Linux Academy 
 # Build The Linux Academy Lab Skill
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
-## Setup w/ ASK CLI
+## Preparing for the Lab
 
 ### About
-This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (Command Line Interface) Tools, [AWS](https://aws.amazon.com/), and the [ASK Developer Portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs). 
+Theses series of AWS hands-on lab,  will create  working skills as discussed in each course video, and are independanly consumable labs. Each lab come with a set of instructions if you are following along with the course videos and the labs you may not have to repeat each step. This course is an advance programming course a working knowledge of git, AWS and Alexa Skill Building is assumed.  
+By the end of each lab, you will be closer to passing the Certified Alexa Skill Builder Specialty Exam. The outlined insructions set for each lab on github is not a complete set of instrucions for completing each lab. You will need to Log in to Linux Academy and watch the videos along with the reviewing the course material to understand how to integrate each lab into the greater course. 
+
+Each lab insructions assumes you have your developer environment ready to go and that you have some familiarity with CLI (Command Line Interface) Tools, [AWS](https://aws.amazon.com/), and the [ASK Developer Portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs). 
 
 ### Pre-requisites
 
@@ -14,98 +18,12 @@ This readme assumes you have your developer environment ready to go and that you
 * Register for an [Amazon Developer Account](https://developer.amazon.com?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs)
 * Install and initialize the [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs)
 
-### Getting Started with Ask cli
 
-```
-ask new --url https://github.com/linuxacademy/content-alexa-skillbuilder.git
-? Please type in your new skill name, alphanumeric only: example-skill
-[Warn]: Downloading skill template from unofficial resource. Please make
-sure you understand what each script is doing to best protect yourself
-from malicious usage
-? Would you still like to continue execution ? Yes
-Skill The Linux Academy Lab Skill has been created based on the chosen template
-In this example, ASK CLI prompts for a skill name. You can provide a skill name with the --skill-name or -n parameter.
-```
-### Details
-1. **Make sure** you are running the latest version of the CLI
+## Labs and Branches
 
-	```bash
-	npm update -g ask-cli
-	```
+Each lab is an available Branch in this repository. It is done this way so you can mirror the repository and merge the changes to follow along.  This will help you understand the changes to the source between each lab and consume each lab independantly. 
 
-2. **Clone** the repository and navigate into the skill's root directory.
+I look forward to working with you helping you pass your Alexa Certified Skill Builder Specialty Exam.  
 
-	```bash
-	ask new --url  https://github.com/linuxacademy/content-alexa-skillbuilder.git --skill-name LaLabSkillBuilder1
-	cd LaLabSkillBuilder
-	```
+If you found this repo from a google search please join us to learn more. [Join Here](https://linuxacademy.com/join/pricing)
 
-3. Install npm dependencies by navigating into the `/lambda/custom` directory and running the npm command: `npm install`.
-
-	```bash
-	cd lambda/custom
-	npm install
-	```
-
-### Deployment
-
-ASK CLI **will create the skill and the Lambda function for you**. The Lambda function will be created in ```us-east-1 (Northern Virginia)``` by default.
-
-1. Navigate to the project's root directory. you should see a file named 'skill.json' there.
-2. Deploy the skill and the Lambda function in one step by running the following command:
-
-	```bash
-	ask deploy
-	```
-
-### Testing
-
-1. To test, the skill needs to be enabled.  From the developer console, open your skill and click the Test tab.  Ensure the skill is available for testing in Development.
-
-2. Simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
-
-	```bash
-	 ask simulate -l en-US -t "start linux academy lab"
-
-	 ✓ Simulation created for simulation id: 4a7a9ed8-94b2-40c0-b3bd-fb63d9887fa7
-	◡ Waiting for simulation response{
-	  "status": "SUCCESSFUL",
-	  ...
-	 ```
-
-3. Once the "Test" switch is enabled, your skill can be tested on devices associated with the developer account as well. Speak to Alexa from any enabled device, from your browser at [echosim.io](https://echosim.io/welcome), or through your Amazon Mobile App and say :
-
-	```text
-	Alexa, start linux academy lab
-	```
-## Customization
-
-1. ```./skill.json```
-
-   Change the skill name, example phrase, icons, testing instructions etc ...
-
-   Remember than many information are locale-specific and must be changed for each locale (e.g. en-US, en-GB, de-DE, etc.)
-
-   See the Skill [Manifest Documentation](https://developer.amazon.com/docs/smapi/skill-manifest.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=hello-world-nodejs-V2_CLI-3&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_hello-world-nodejs-V2_CLI-3_Convert_WW_beginnersdevs&sc_segment=beginnersdevs) for more information.
-
-2. ```./lambda/custom/index.js```
-
-   Modify messages, and data from the source code to customize the skill.
-
-3. ```./models/*.json```
-
-	Change the model definition to replace the invocation name and the sample phrase for each intent.  Repeat the operation for each locale you are planning to support.
-
-4. Remember to re-deploy your skill and Lambda function for your changes to take effect.
-
-	```bash
-	ask deploy
-	```
-## Anotated Source Code 
-
-Alexa Skill Builder has annotaed source code using Docco this provides and indepth look at the source code to help you understan the lab. 
-[View the Annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/)
-
-## Available Labs 
-
-branch intents Lab 
