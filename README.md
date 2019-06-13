@@ -29,6 +29,9 @@ If you found this repo from a google search please join us to learn more. [Join 
 
 ## Available Labs 
 
-[Intents](./instructions/intentLab.md)
-[Slots](./instructions/slotLab.md)
 [Developer Console](./instructions/DeveloperConsoleLab.md)
+
+[Intents](./instructions/intentLab.md)
+
+[Slots](./instructions/slotLab.md)
+
