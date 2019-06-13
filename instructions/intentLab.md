@@ -27,13 +27,12 @@ Or you use the Linux Academy Lab Environment
 ### Details
 
 1. **Clone** Lab Branch and checkout 
+```
+git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
+git checkout intentsLab
+```
 
-
-'git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git'
-'git checkout intentsLab'
-
-
- 1.  **Create repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
+2.  **Create repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
 
     * Mirror lab branch and checkout
 
@@ -41,7 +40,7 @@ Or you use the Linux Academy Lab Environment
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
     git remote set-url origin https://github.com/AiwarriorLA/LaIntentsLab.git
     ```
-2.  **Change working director** 
+3.  **Change working director** 
     * remove clone 
     ```
     cd ../
@@ -60,7 +59,7 @@ Or you use the Linux Academy Lab Environment
     ``` 
 
 
-3. Or use **Ask CLI** 
+4. Or use **Ask CLI** 
     * Navigate to working dir in my case its called labs
 
     ``` mkdir labs ```
