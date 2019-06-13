@@ -34,7 +34,7 @@ git checkout intentsLab
 ```
  1.  **Create Repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
 
-    * __Mirror__ Lab Branch and checkout 
+    ___ * Mirror lab branch and checkout ___
 
     ```
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
@@ -52,7 +52,7 @@ git checkout intentsLab
     cd LabIntents 
     git clone https://github.com/AiwarriorLA/LaIntentsLab.git .
     ```
-    * Deploy in your own AWS Env
+    * Deploy in your own AWS environment
 
     ```
     ask deploy
