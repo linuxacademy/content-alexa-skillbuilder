@@ -1,5 +1,5 @@
 # Alexa Skill Building Intent Lab with Linux Academy
-<img src="https://www.dropbox.com/s/wjm5bnmzjn8ywxy/377_Course_Banner.png" />
+<img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
 
