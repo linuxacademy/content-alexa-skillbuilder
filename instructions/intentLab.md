@@ -34,7 +34,7 @@ git checkout intentsLab
 ```
  1.  **Create Repo for your own project** [Instructions for creating repo](https://help.github.com/en/articles/create-a-repo)
 
-    ___ * Mirror lab branch and checkout ___
+    * Mirror lab branch and checkout
 
     ```
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
