@@ -106,3 +106,6 @@ ASK CLI **will create the skill and the Lambda function for you**. The Lambda fu
 Alexa Skill Builder has annotaed source code using Docco this provides and indepth look at the source code to help you understan the lab. 
 [View the Annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/)
 
+## Available Labs 
+
+branch intents Lab 
