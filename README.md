@@ -35,3 +35,7 @@ If you found this repo from a google search please join us to learn more. [Join 
 
 [Slots](./instructions/slotLab.md)
 
+[Events](./instructions/EventsLab.md)
+
+[Use Cases Prebuilt Models] (./instructions/UseCaseLab.md)
+

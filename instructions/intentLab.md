@@ -179,3 +179,10 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 ## View Annotated Source Code
 
 Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
+
+
+### Intents and there functions 
+
+TBD add JSON Changes to en-US.json which add intent to example  
+
+Add changes to index.js to add the intent handling 
