@@ -59,7 +59,10 @@ git checkout intentsLab
 4. Or use **Ask CLI** 
     * Navigate to working dir in my case its called labs
 
-    ``` mkdir labs ```
+    ``` 
+    mkdir labs 
+    cd labs
+    ```
 
     * Use Ask CLI to create Alexa Skill 
 
@@ -67,7 +70,7 @@ git checkout intentsLab
      ask new --url https://github.com/AiwarriorLA/LaIntentsLab.git  --skill-name LaLabIntents
     ```
 
-    * Deploy in your own AWS Env
+    * Deploy in your own AWS Enviornment
 
     ```
     ask deploy
