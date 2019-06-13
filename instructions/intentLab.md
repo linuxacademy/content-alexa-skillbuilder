@@ -1,6 +1,6 @@
 # content-alexa-skillbuilder Intent Lab
 # Build The Linux Academy Lab Skill
-<img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
+<img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Setup with ASK CLI
 
@@ -40,7 +40,7 @@ git checkout intentsLab
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
     git remote set-url origin https://github.com/AiwarriorLA/LaIntentsLab.git
     ```
-3.  **Change working director** 
+3.  **Change working directory** 
     * remove clone 
     ```
     cd ../
