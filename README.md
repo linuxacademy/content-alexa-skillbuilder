@@ -27,3 +27,8 @@ I look forward to working with you helping you pass your Alexa Certified Skill B
 
 If you found this repo from a google search please join us to learn more. [Join Here](https://linuxacademy.com/join/pricing)
 
+## Available Labs 
+
+[Intents](./instructions/intentLab.md)
+[Slots](./instructions/slotLab.md)
+[Developer Console](./instructions/DeveloperConsoleLab.md)

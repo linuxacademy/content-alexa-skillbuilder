@@ -2,7 +2,7 @@
 # Build The Linux Academy Lab Skill
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
-## Setup w/ ASK CLI
+## Preparing for the Lab
 
 ### About
 This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (Command Line Interface) Tools, [AWS](https://aws.amazon.com/), and the [ASK Developer Portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs). 
@@ -61,11 +61,11 @@ ASK CLI **will create the skill and the Lambda function for you**. The Lambda fu
 	ask deploy
 	```
 
-### Testing
+### Test That Everything Is Set Up
 
-1. To test, the skill needs to be enabled.  From the developer console, open your skill and click the Test tab.  Ensure the skill is available for testing in Development.
+1. To test, the skill needs to be enabled. From the developer console, open your skill and click the **Test** tab. Ensure the skill is available for testing in development.
 
-2. Simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
+2. Or simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
 
 	```bash
 	 ask simulate -l en-US -t "start linux academy lab"
@@ -76,28 +76,28 @@ ASK CLI **will create the skill and the Lambda function for you**. The Lambda fu
 	  ...
 	 ```
 
-3. Once the "Test" switch is enabled, your skill can be tested on devices associated with the developer account as well. Speak to Alexa from any enabled device, from your browser at [echosim.io](https://echosim.io/welcome), or through your Amazon Mobile App and say :
+3. Once the "Test" switch is enabled, your skill can be tested on devices associated with the developer account as well. Speak to Alexa from any enabled device, from your browser at [echosim.io](https://echosim.io/welcome), or through your Amazon mobile app, and say:
 
 	```text
 	Alexa, start linux academy lab
 	```
-## Customization
+## To Modify the Skill Details by Changing the `skill.json` File
 
-1. ```./skill.json```
+1. `./skill.json`
 
-   Change the skill name, example phrase, icons, testing instructions etc ...
+   Change the skill name, example phrase, icons, testing instructions etc.
 
-   Remember than many information are locale-specific and must be changed for each locale (e.g. en-US, en-GB, de-DE, etc.)
+   Remember that a lot of information is locale-specific and must be changed for each locale (e.g., en-US, en-GB, de-DE, etc.).
 
-   See the Skill [Manifest Documentation](https://developer.amazon.com/docs/smapi/skill-manifest.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=hello-world-nodejs-V2_CLI-3&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_hello-world-nodejs-V2_CLI-3_Convert_WW_beginnersdevs&sc_segment=beginnersdevs) for more information.
+   See the [skill manifest documentation](https://developer.amazon.com/docs/smapi/skill-manifest.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=hello-world-nodejs-V2_CLI-3&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_hello-world-nodejs-V2_CLI-3_Convert_WW_beginnersdevs&sc_segment=beginnersdevs) for more information.
 
-2. ```./lambda/custom/index.js```
+2. `./lambda/custom/index.js`
 
-   Modify messages, and data from the source code to customize the skill.
+   Modify messages and data from the source code to customize the skill.
 
-3. ```./models/*.json```
+3. `./models/*.json`
 
-	Change the model definition to replace the invocation name and the sample phrase for each intent.  Repeat the operation for each locale you are planning to support.
+	Change the model definition to replace the invocation name and the sample phrase for each intent. Repeat the operation for each locale you are planning to support.
 
 4. Remember to re-deploy your skill and Lambda function for your changes to take effect.
 
@@ -221,46 +221,3 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 
 ---
 
-### Test That Everything Is Set Up
-
-1. To test, the skill needs to be enabled. From the developer console, open your skill and click the **Test** tab. Ensure the skill is available for testing in development.
-
-2. Or simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
-
-	```bash
-	 ask simulate -l en-US -t "start linux academy lab"
-
-	 ✓ Simulation created for simulation id: 4a7a9ed8-94b2-40c0-b3bd-fb63d9887fa7
-	◡ Waiting for simulation response{
-	  "status": "SUCCESSFUL",
-	  ...
-	 ```
-
-3. Once the "Test" switch is enabled, your skill can be tested on devices associated with the developer account as well. Speak to Alexa from any enabled device, from your browser at [echosim.io](https://echosim.io/welcome), or through your Amazon mobile app, and say:
-
-	```text
-	Alexa, start linux academy lab
-	```
-## To Modify the Skill Details by Changing the `skill.json` File
-
-1. `./skill.json`
-
-   Change the skill name, example phrase, icons, testing instructions etc.
-
-   Remember that a lot of information is locale-specific and must be changed for each locale (e.g., en-US, en-GB, de-DE, etc.).
-
-   See the [skill manifest documentation](https://developer.amazon.com/docs/smapi/skill-manifest.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=hello-world-nodejs-V2_CLI-3&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_hello-world-nodejs-V2_CLI-3_Convert_WW_beginnersdevs&sc_segment=beginnersdevs) for more information.
-
-2. `./lambda/custom/index.js`
-
-   Modify messages and data from the source code to customize the skill.
-
-3. `./models/*.json`
-
-	Change the model definition to replace the invocation name and the sample phrase for each intent. Repeat the operation for each locale you are planning to support.
-
-4. Remember to re-deploy your skill and Lambda function for your changes to take effect.
-
-	```bash
-	ask deploy
-	```
