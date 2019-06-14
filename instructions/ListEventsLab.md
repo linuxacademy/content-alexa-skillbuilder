@@ -1,4 +1,4 @@
-# Alexa Skill Builder Use Cases Lab with Linux Academy
+# Alexa Skill Builder Lists Skill and Events with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
@@ -181,13 +181,13 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
 
 
-## Using prebuilt models a use case for Alexa 
+## Creating Events for a list Skill
 
 In this AWS hands-on lab, we will use a fully working Alexa skill using the lists prebuilt model on the command line. The skill will use Lambda with Node.js. 
 
 By the end of the lab, you will understand how to create a prebuilt model skill and understand its execution within AWS. This lab will guide you through the creation and configuration process and updating the code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
 
-We will build a list prebuilt model and discuss other prebuilt models caveots. 
-The skill used will be a [lists skill](https://developer.amazon.com/docs/smapi/steps-to-create-a-list-skill.html)
+In this lab we will build an Alexa Lists Skill and add events to make the skill more responsive to the users. 
+The skill used will be a [lists skill Events](https://developer.amazon.com/docs/smapi/list-events-in-alexa-skills.html
 at the end of this lab you will have a better understanding of using the cli to create a skill using a prebuilt model. 
 
