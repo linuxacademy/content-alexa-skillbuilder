@@ -1,4 +1,4 @@
-# Alexa Skill Builder Intent Lab with Linux Academy
+# Alexa Skill Builder Events Lab with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
@@ -182,10 +182,8 @@ Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/c
 
 
 ### Creating Events and handling them
+In this AWS hands-on lab, we will use a fully working Alexa skill and create an skill that receives a weather event using the web interface and command line. The skill will use Lambda with Node.js. 
 
-TBD add JSON Changes to en-US.json which add events to example skill 
-
-Add changes to index.js to add the event handling 
-
-? proactive events vs https://developer.amazon.com/blogs/alexa/post/7822f3ee-1735-4eaa-9aa6-5b8e39953c07/proactiveeventsapi-launch-announcement
-https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#media-content
+By the end of the lab, you will understand how to setup a custom skill to recieve an event and understand the the requirements for setting up a skill to recieve an event within AWS. This lab will guide you through the skill and event creation and handling the event in code. This lab will also walk you through viewing the logs and understanding the JSON response after the skill execution. 
+In this lab we will use proactive events and use a media-content event. 
+The skill used will be a [Media Content Event](https://developer.amazon.com/docs/smapi/schemas-for-proactive-events.html#media-content)

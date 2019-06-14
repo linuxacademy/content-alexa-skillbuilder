@@ -183,6 +183,6 @@ Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/c
 
 ### Intents and there functions 
 
-TBD add JSON Changes to en-US.json which add intent to example  
+In this AWS hands-on lab, we will use a fully working Alexa skill and create an intent using the web interface and command line. The skill will use Lambda with Node.js. 
 
-Add changes to index.js to add the intent handling 
+By the end of the lab, you will understand how to create an intent and understand their uses within AWS. This lab will guide you through the slot creation and handling the slot values in code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
