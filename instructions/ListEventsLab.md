@@ -188,6 +188,6 @@ In this AWS hands-on lab, we will use a fully working Alexa skill using the list
 By the end of the lab, you will understand how to create a prebuilt model skill and understand its execution within AWS. This lab will guide you through the creation and configuration process and updating the code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
 
 In this lab we will build an Alexa Lists Skill and add events to make the skill more responsive to the users. 
-The skill used will be a [lists skill Events](https://developer.amazon.com/docs/smapi/list-events-in-alexa-skills.html
+The skill used will be a [lists skill Events](https://developer.amazon.com/docs/smapi/list-events-in-alexa-skills.html)
 at the end of this lab you will have a better understanding of using the cli to create a skill using a prebuilt model. 
 
