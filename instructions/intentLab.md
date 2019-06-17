@@ -178,11 +178,11 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 
 ## View Annotated Source Code
 
-Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
+Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/intents/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
 
 
 ### Intents and there functions 
 
 In this AWS hands-on lab, we will use a fully working Alexa skill and create an intent using the web interface and command line. The skill will use Lambda with Node.js. 
 
-By the end of the lab, you will understand how to create an intent and understand their uses within AWS. This lab will guide you through the slot creation and handling the slot values in code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
+By the end of the lab, you will understand how to create an intent and understand their uses within AWS. This lab will guide you through the intent creation. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
