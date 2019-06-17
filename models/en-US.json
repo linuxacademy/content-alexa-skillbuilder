@@ -1,27 +1,117 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "linux academy lab",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "HelloWorldIntent",
-          "samples": [
-            "hello"
+      "languageModel": {
+          "invocationName": "test",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "HelloWorldIntent",
+                  "slots": [
+                      {
+                          "name": "name",
+                          "type": "AMAZON.Person",
+                          "samples": [
+                              "they call me {name}",
+                              "call me {name}",
+                              "My name is {name}",
+                              "{name} "
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "what's Up my name is {name}",
+                      "{name}",
+                      "whats up. ",
+                      "hi ",
+                      "hello",
+                      "hello my name is  {name}",
+                      "hello alexa my name is {name}",
+                      "how are you my name is {name}"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              }
+          ],
+          "types": [
+              {
+                  "name": "AMAZON.Person",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "Matthew "
+                          }
+                      }
+                  ]
+              }
           ]
-        }
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "HelloWorldIntent",
+                  "delegationStrategy": "ALWAYS",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "name",
+                          "type": "AMAZON.Person",
+                          "confirmationRequired": true,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "confirmation": "Confirm.Slot.921547038215.823740870255",
+                              "elicitation": "Elicit.Slot.897910743570.1538649886908"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.897910743570.1538649886908",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "What do you go by?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "what do they call you?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "what is your name?"
+                  }
+              ]
+          },
+          {
+              "id": "Confirm.Slot.921547038215.823740870255",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "I will call you {name} is that ok?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "your name is {name} , did i get that right?"
+                  }
+              ]
+          }
       ]
-    }
   }
 }

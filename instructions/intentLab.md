@@ -185,4 +185,4 @@ Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/c
 
 In this AWS hands-on lab, we will use a fully working Alexa skill and create an intent using the web interface and command line. The skill will use Lambda with Node.js. 
 
-By the end of the lab, you will understand how to create an intent and understand their uses within AWS. This lab will guide you through the slot creation and handling the slot values in code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
+By the end of the lab, you will understand how to create an intent and understand their uses within AWS. This lab will guide you through the intent creation. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
