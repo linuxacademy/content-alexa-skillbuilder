@@ -1,4 +1,4 @@
-# Alexa Skill Builder Slots Lab with Linux Academy
+# Alexa Skill Builder Directives and required slot Lab with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
@@ -6,7 +6,7 @@
 ### About
 This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (command line interface) tools, [AWS](https://aws.amazon.com/), and the [ASK Developer portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).
 
-Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/slotsLab/instructions/intentLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
+Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/intentsLab/instructions/intentLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
 
 ### Pre-Requisites
 
@@ -180,8 +180,26 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 
 Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
 
-### Slots and there functions 
 
-TBD add JSON Changes to en-US.json which add slots to example intent 
+## Intents and there functions 
 
-Add changes to index.js to add the slot handling
+In this AWS hands-on lab, we will use a fully working Alexa skill and create an intent with directives using the web interface and command line. The skill will use Lambda with Node.js. 
+
+By the end of the lab, you will understand how to create an intent with a dialog model and understand their uses within AWS. This lab will guide you through the slot creation and handling the slot values in code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
+
+To use the Dialog directives, your skill must include a dialog model. The dialog model is a structure that identifies:
+
+
+1. The slots that must be filled with valid values in order to fulfill the intent. These are considered required slots.
+2. he prompts Alexa speaks to ask for required slot values and the utterances users can say in reply.
+3. Whether any of the required slots must be also confirmed by the user before continuing.
+4. Whether the entire intent must be confirmed by the user before continuing.
+5. The prompts Alexa speaks to ask for slot and intent confirmations.
+6. Any slot validation rules that the slot value provided by the user must pass to be considered valid. These rules can be used with both required and non-required slots.
+7. The prompts Alexa speaks to ask for a corrected value when the user's response fails slot validation.
+8. How the dialog model is used when a user interacts with your skill depends on how you choose to manage the conversation.
+
+You can use the developer console to create the create a dialog model. You can also define the dialog model in JSON in your interaction model schema.
+
+
+

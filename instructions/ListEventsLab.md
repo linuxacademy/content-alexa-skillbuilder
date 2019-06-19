@@ -1,4 +1,4 @@
-# Alexa Skill Builder Slots Lab with Linux Academy
+# Alexa Skill Builder Lists Skill and Events with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
@@ -6,7 +6,7 @@
 ### About
 This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (command line interface) tools, [AWS](https://aws.amazon.com/), and the [ASK Developer portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).
 
-Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/slotsLab/instructions/intentLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
+Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/intentsLab/instructions/intentLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
 
 ### Pre-Requisites
 
@@ -180,8 +180,14 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 
 Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
 
-### Slots and there functions 
 
-TBD add JSON Changes to en-US.json which add slots to example intent 
+## Creating Events for a list Skill
 
-Add changes to index.js to add the slot handling
+In this AWS hands-on lab, we will use a fully working Alexa skill using the lists prebuilt model on the command line. The skill will use Lambda with Node.js. 
+
+By the end of the lab, you will understand how to create a prebuilt model skill and understand its execution within AWS. This lab will guide you through the creation and configuration process and updating the code. This lab will also walk you through viewing the logs and understanding the JSON response after the intent execution. 
+
+In this lab we will build an Alexa Lists Skill and add events to make the skill more responsive to the users. 
+The skill used will be a [lists skill Events](https://developer.amazon.com/docs/smapi/list-events-in-alexa-skills.html)
+at the end of this lab you will have a better understanding of using the cli to create a skill using a prebuilt model. 
+
