@@ -100,7 +100,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     Clone the lab branch, and mirror as described in the details above:
 
     ```
-    git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
+    git clone --single-branch --branch slotsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
     ```
 
 3. Deploy the skill into the lab environment:
