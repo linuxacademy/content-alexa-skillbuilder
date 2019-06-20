@@ -1,6 +1,7 @@
-// This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
-// Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
-// session persistence, api calls, and more.
+// ## Intents Annotated Code 
+//This is the source code for Slots Lab the focus of this code 
+//is working with the created slots. This will aid you in understanding slots
+
 const Alexa = require('ask-sdk-core');
 
 const HelloInfo = [
@@ -9,6 +10,15 @@ const HelloInfo = [
   'I Hope you learned something ',
 ];
 
+// # `launch request handler`
+// The launch request handler is used to start the skill
+// When a customer starts your skill by saying, “Open LinuxAcademy Lab” your skill receives 
+// a request of type “LaunchRequest.”
+// To handle this request, an object of type LaunchRequestHandler is created in code. 
+// You can name the lauch request handler anything you want. 
+// I suggest you standardize and create a nameing convention and give your handlers
+// a name related to the type of request it they handle. 
+// In this case its called LaunchRequestHandler, 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -21,6 +31,13 @@ const LaunchRequestHandler = {
             .getResponse();
     }
 };
+
+// # `HelloWorldIntent` 
+//This is code to demonstrate addDelegateDirective
+//This will continue the conversation this demonstrates the slots are not passed between intents
+//As the name value will not be passed even though it was filled when this intent was completed. 
+//You will need to use session attributes to pass the values between intents. 
+
 const HelloWorldIntentHandler = {
     canHandle(handlerInput) {
           console.log(' canHandle HelloWorldIntentHandler');
@@ -42,10 +59,11 @@ const HelloWorldIntentHandler = {
 };
 
 
-
-//error because resolution with resolutionsPerAuthority is not filled for buitin slot type so SlotValues is never validated. 
-//change slot type or create custom slot synonym so resolutionsPerAuthority are returned. 
-
+// # `StarteddGettingToKnowYouHandler`
+//This is code to demonstrate Entiy resolutionsPerAuthority 
+//while managing your own dialog model this demonstrates validation of slots 
+//Ciy will be resolved an return with entity resolution while Name will not because
+//The slot is a built in type. This can be shown in the json reponse. 
 const StarteddGettingToKnowYouHandler = {
   canHandle(handlerInput) {
     console.log(' canHandle StarteddGettingToKnowYouHandler');
@@ -88,7 +106,10 @@ const StarteddGettingToKnowYouHandler = {
   },
 };
 
-  
+// # `InprogressGettingToKnowYouMoreHandler`
+//This is code to demonstrate manual slot confirmation 
+//while managing your own dialog model you can force non mandatory slots confirmation 
+//Dynamically in code even if the interaction model does not define them as mandatory to fill the slot. 
 
 const InprogressGettingToKnowYouMoreHandler = {
   canHandle(handlerInput) {
@@ -112,6 +133,12 @@ const InprogressGettingToKnowYouMoreHandler = {
   },
 };
 
+// # `delegateBacktoAlexaHandler`
+//This is code to demonstrate returning the slot validation for the intent back to Alexa dialog managment 
+//For complex slot you may need to use manual methods but in the case where you just want alexa to collect the slot 
+// Because the slot is defined as required to fulfill the intent this code will just return a directive for the current slot 
+// The Ask SDK will then use the dialog models and prompts for the mandatory slots and attempt to fill them. 
+
 const delegateBacktoAlexaHandler = {
   canHandle(handlerInput) {
      console.log('can Handle delegateBacktoAlexaHandler');
@@ -132,6 +159,9 @@ const delegateBacktoAlexaHandler = {
   },
 };
 
+// # `CompletedGettingToKnowYouHandler`
+//This is code to demonstrate the dialog state being set to complete because all the required slots are filled 
+//The code then builds the reponse based on the values in the slots, this code will only execute when the dialog state is complete
 const CompletedGettingToKnowYouHandler = {
   canHandle(handlerInput) {
      console.log('can Handle CompletedGettingToKnowYouHandler');
@@ -157,6 +187,8 @@ const CompletedGettingToKnowYouHandler = {
 
 
 
+// # `HelpIntentHandler`
+// The help intent handler will helpe the user when they ask for help
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -172,6 +204,10 @@ const HelpIntentHandler = {
             .getResponse();
     }
 };
+
+// # `CancelAndStopIntentHandler`
+// A built in intent to handle the Cancel and Stop requests. 
+
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -185,6 +221,11 @@ const CancelAndStopIntentHandler = {
             .getResponse();
     }
 };
+
+// # `SessionEndedRequestHandler`
+// This is a built in request that notest the session is ended
+// Note: No auido is output by this intent as the session is ended. 
+
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
@@ -195,10 +236,12 @@ const SessionEndedRequestHandler = {
     }
 };
 
+// # `IntentReflectorHandler`
 // The intent reflector is used for interaction model testing and debugging.
 // It will simply repeat the intent the user said. You can create custom handlers
 // for your intents by defining them above, then also adding them to the request
 // handler chain below.
+
 const IntentReflectorHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest';
@@ -214,6 +257,7 @@ const IntentReflectorHandler = {
     }
 };
 
+// # `ErrorHandler`
 // Generic error handling to capture any syntax or routing errors. If you receive an error
 // stating the request handler chain is not found, you have not implemented a handler for
 // the intent being invoked or included it in the skill builder below.
@@ -232,8 +276,9 @@ const ErrorHandler = {
     }
 };
 
-// given an intent and an array slots, intentSlotsHaveBeenFilled will determine
-// if all of the slots in the array have been filled.
+// # `isDefaultName`
+// This code will check to see if we set the slot to the default name. and return true if the user has not set there name. 
+// and the code is using the default value. 
 // Returns:
 // (true | false)
 function isDefaultName(intent, slots){
@@ -251,7 +296,9 @@ function isDefaultName(intent, slots){
   return result;
 }
 
-// given an intent and an array slots, intentSlotsHaveBeenFilled will determine
+// # `intentSlotsHaveBeenFilled`
+// Helper function to check to see if the slots have been filled. 
+// Given an intent and an array slots, intentSlotsHaveBeenFilled will determine
 // if all of the slots in the array have been filled.
 // Returns:
 // (true | false)
@@ -269,8 +316,13 @@ function intentSlotsHaveBeenFilled(intent, slots){
   return result;
 }
 
-// 2. Helper Functions ============================================================================
 
+// # `getSlotValues`
+// Helper function to check to see if the slots have been filled by using resolutionsPerAuthority Response 
+// Given an array slots, getSlotValues will determine
+// if they have been matched with a predefined value 
+// Returns:
+// slotValues array key value pair
 function getSlotValues(filledSlots) {
   const slotValues = {};
 
@@ -313,21 +365,32 @@ function getSlotValues(filledSlots) {
   return slotValues;
 }
 
+// # `getRandomPhrase`
+// Helper function to check to see if the slots have been filled by using resolutionsPerAuthority Response 
+// Given an array slots, getSlotValues will determine
+// if they have been matched with a predefined value 
+// Returns:
+// a string contained within the array passed keeping Alexa ouput relatable 
 function getRandomPhrase(array) {
   // the argument is an array [] of words or phrases
   const i = Math.floor(Math.random() * array.length);
   return (array[i]);
 }
 
+// # `getUserDefaultName`
+// Helper function used to set a slot default name value 
+// Returns:
+// a string with the default value
 function getUserDefaultName() {
     
     return "slim shady"
     
 }
 
-// This handler acts as the entry point for your skill, routing all request and response
-// payloads to the handlers above. Make sure any new handlers or interceptors you've
-// defined are included below. The order matters - they're processed top to bottom.
+// # `exports.handler`
+// When you define a skill you need to register your handlers with the skill 
+// Order matters they will be executed in the order they are added. 
+// Keep this is mind when adding them to the list. 
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
