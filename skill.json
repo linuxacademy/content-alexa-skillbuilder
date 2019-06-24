@@ -19,7 +19,8 @@
     "apis": {
       "smartHome": {
         "endpoint": {
-          "sourceDir": "lambda/smarthome"
+          "sourceDir": "lambda/smarthome",
+          "uri": "lalabskillbuilder"
         }
       }
     },
