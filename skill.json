@@ -3,26 +3,23 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Sample Smart Home Lab Skill - Node.js - Switch",
           "examplePhrases": [
-            "Alexa open linux academy lab",
-            "linux academy",
-            "help"
+            "Turn on Sample Switch"
           ],
-          "name": "lalabskillbuilder",
-          "description": "Sample Full Description"
+          "name": "LASmartHomeSwitch",
+          "description": "A sample Smart Home skill that implements a virtual switch in Node.js."
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
+      "testingInstructions": "",
+      "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
     "apis": {
-      "custom": {
+      "smartHome": {
         "endpoint": {
-          "sourceDir": "lambda/custom",
-          "uri": "lalabskillbuilder"
+          "sourceDir": "lambda/smarthome"
         }
       }
     },
