@@ -1,5 +1,7 @@
 
 'use strict';
+// # `Smart Home Lab`
+// Setup for account linking and  Messages for Smart Home 
 
 let AWS = require('aws-sdk');
 AWS.config.update({region:'us-east-1'});
@@ -45,11 +47,16 @@ exports.handler = async function (event, context) {
     }
 
     let namespace = ((event.directive || {}).header || {}).namespace;
-
+    // # `alexa.authorization`
+    // Setup Return response for autorization for this lab the authorization will be provided via 
+    // AWS Cognito
     if (namespace.toLowerCase() === 'alexa.authorization') {
         let aar = new AlexaResponse({"namespace": "Alexa.Authorization", "name": "AcceptGrant.Response",});
         return sendResponse(aar.get());
     }
+    // # `alexa.discovery`
+    // This returns the JSON discovery Message 
+    // This is a list of capabilities for the switch as defined by the PowerController interface. 
 
     if (namespace.toLowerCase() === 'alexa.discovery') {
         let adr = new AlexaResponse({"namespace": "Alexa.Discovery", "name": "Discover.Response"});
@@ -58,7 +65,9 @@ exports.handler = async function (event, context) {
         adr.addPayloadEndpoint({"friendlyName": "Sample Switch", "endpointId": "sample-switch-01", "capabilities": [capability_alexa, capability_alexa_powercontroller]});
         return sendResponse(adr.get());
     }
-
+    // # `alexa.powercontroller`
+    // Setup of the event directives 
+    // Each directive for the specific event has a defined value and response format
     if (namespace.toLowerCase() === 'alexa.powercontroller') {
         let power_state_value = "OFF";
         if (event.directive.header.name === "TurnOn")
@@ -94,15 +103,17 @@ exports.handler = async function (event, context) {
     }
 
 };
-
+// # `sendResponse`
+// Send the response back from the recieved directive 
+// This also logs the response in cloud watch
 function sendResponse(response)
 {
-    // TODO Validate the response
     console.log("index.handler response -----");
     console.log(JSON.stringify(response));
     return response
 }
-
+// # `sendDeviceState`
+// Update DyanmoDB the state of the switch 
 function sendDeviceState(endpoint_id, state, value) {
     let dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 
@@ -118,12 +129,12 @@ function sendDeviceState(endpoint_id, state, value) {
             ReturnValues: "UPDATED_NEW"
         });
 
-    console.log("index.sendDeviceState request -----");
+    console.log("DynaomDB index.sendDeviceState request -----");
     console.log(request);
 
     let response = request.send();
 
-    console.log("index.sendDeviceState response -----");
+    console.log("DynaomDB index.sendDeviceState response -----");
     console.log(response);
     return true;
 }

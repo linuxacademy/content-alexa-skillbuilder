@@ -7,20 +7,20 @@
           "examplePhrases": [
             "Turn on Sample Switch"
           ],
-          "name": "LASmartHomeSwitch",
+          "name": "SmartDeviceLab",
           "description": "A sample Smart Home skill that implements a virtual switch in Node.js."
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions": "",
-      "category": "EDUCATION_AND_REFERENCE",
+      "category": "SMART_HOME",
       "distributionCountries": []
     },
     "apis": {
       "smartHome": {
         "endpoint": {
           "sourceDir": "lambda/smarthome",
-          "uri": "lalabskillbuilder"
+          "uri": "SmartDeviceLab"
         }
       }
     },

@@ -39,3 +39,5 @@ If you found this repo from a google search please join us to learn more. [Join 
 
 [Use Cases Prebuilt Models](./instructions/UseCaseLab.md)
 
+[Prebuilt Models Smart Home](./instructions/PrebuiltModelLab.md)
+
