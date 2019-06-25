@@ -109,6 +109,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     ask deploy
     ```
     when you run ask deploy the output should look similar to the following
+    
     -------------------- Create Skill Project --------------------
     ```Skill Id: amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX 
     Skill deployment finished.
@@ -124,11 +125,8 @@ Here are optional steps for creating your own environment by mirroring the lab b
 
 * Your lab is now configured with the endpoint set to the Linux Academy lab AWS environment. You can log in to to see the Lambda code with the information provided in the lab. The deploy above creates a skill in your developer account with an endpoint in the Linux Academy AWS environment.
 
-* If you wish to use Alexa-hosted environment, you can create a skill and select **Alexa-hosted**. Instructions are [here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html).
 
-* If you are using Alexa-hosted and you want to follow along in the lab video, you will need to copy the JSON for the interaction model into the skill you create and the Lambda code into the `index.js` file. You will then have all the required components to follow along.
-
-* For some labs, Alexa-hosted is not an option, as we will be using features not currently offered in the Alexa Developer Console at this time.
+* For this lab, Alexa-hosted is not an option, as we will be using features not currently offered in the Alexa Developer Console at this time.
 
 **Caution:**
 
@@ -208,16 +206,27 @@ or
 1. ask-cli api --skill-id amzn1.ask.skill.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX create-account-linking
 
 Provide the following when prompted: 
+
 Authorization URL: https://[your-cognito-domain]/oauth2/authorize?response_type=code&client_id=[your-client-id]&redirect_uri=https://pitangui.amazon.com/api/skill/link/[vendor-id-amazon-gives-you]&state=STATE
+
 Client ID: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 Scopes: email,phone,openid,aws.cognito.signin.user.admin,profile
+
 Domains: 
+
 For code grant choose: AUTH_CODE
+
 Access Token URL: https://[your-cognito-domain]/oauth2/token?state=STATE
+
 Client Secret: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 Client Authentication Scheme: REQUEST_BODY_CREDENTIALS
+
 Default Token Expiration Time In Seconds: 
+
 Allow users to enable skill without account linking - NO
+
 
 ## Cognito Configure App Client Settings
 
