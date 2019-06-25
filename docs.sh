@@ -9,3 +9,5 @@ git stash apply
 git commit -am "Updating docs"
 git push
 git stash drop
+
+docco lambda/smarthome/alexa/AlexaResponse.js
