@@ -27,13 +27,6 @@ I look forward to working with you helping you pass your Alexa Certified Skill B
 
 If you found this repo from a google search please join us to learn more. [Join Here](https://linuxacademy.com/join/pricing)
 
-## Labs and Branches
-
-Each lab is an available Branch in this repository. It is done this way so you can mirror the repository and merge the changes to follow along.  This will help you understand the changes to the source between each lab and consume each lab independantly. 
-
-I look forward to working with you helping you pass your Alexa Certified Skill Builder Specialty Exam.  
-
-If you found this repo from a google search please join us to learn more. [Join Here](https://linuxacademy.com/join/pricing)
 
 ## Available Labs 
 
