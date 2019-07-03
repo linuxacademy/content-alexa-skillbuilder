@@ -1,7 +1,7 @@
 {
   "interactionModel": {
       "languageModel": {
-          "invocationName": "IntentsLab",
+          "invocationName": "intents lab",
           "intents": [
               {
                   "name": "AMAZON.CancelIntent",
