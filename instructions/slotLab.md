@@ -26,8 +26,8 @@ Here are optional steps for creating your own environment by mirroring the lab b
 1. **Clone lab branch and checkout**.
 
     ```
-    git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
-    git checkout intentsLab
+    git clone --single-branch --branch slotsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
+    git checkout slotsLab
     ```
 
 2.  **Create repo for your own project**. (Here are [instructions for creating a repo](https://help.github.com/en/articles/create-a-repo).)
@@ -35,7 +35,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     * Mirror lab branch and checkout:
 
     ```
-    git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
+    git push --mirror https://github.com/AiwarriorLA/LaslotsLab.git
     git remote set-url origin https://github.com/AiwarriorLA/LaSlotsLab.git
     ```
 3.  **Change working directory**.
