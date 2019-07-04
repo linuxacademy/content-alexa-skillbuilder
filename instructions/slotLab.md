@@ -48,7 +48,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     ```
     mkdir LabIntents
     cd LabIntents
-    git clone https://github.com/AiwarriorLA/LaIntentsLab.git .
+    git clone https://github.com/AiwarriorLA/LaSlotsLab.git .
     ```
     * Deploy in your own AWS environment:
 
