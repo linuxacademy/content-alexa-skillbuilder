@@ -36,7 +36,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
 
     ```
     git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
-    git remote set-url origin https://github.com/AiwarriorLA/LaIntentsLab.git
+    git remote set-url origin https://github.com/AiwarriorLA/LaSlotsLab.git
     ```
 3.  **Change working directory**.
     * Remove clone:
@@ -68,7 +68,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     * Use ASK CLI to create Alexa skill:
 
     ```
-     ask new --url https://github.com/AiwarriorLA/LaIntentsLab.git  --skill-name LaLabIntents
+     ask new --url https://github.com/AiwarriorLA/LaSlotsLab.git  --skill-name LaLabSlots
     ```
 
     * Deploy in your own AWS environment:
