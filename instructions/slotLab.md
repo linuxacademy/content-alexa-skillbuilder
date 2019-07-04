@@ -6,7 +6,7 @@
 ### About
 This readme assumes you have your developer environment ready to go and that you have some familiarity with CLI (command line interface) tools, [AWS](https://aws.amazon.com/), and the [ASK Developer portal](https://developer.amazon.com/alexa-skills-kit?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Content&sc_detail=hello-world-nodejs-V2_CLI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Content_hello-world-nodejs-V2_CLI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).
 
-Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/slotsLab/instructions/intentLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
+Or you can use the Linux Academy lab environment [notes here](https://github.com/linuxacademy/content-alexa-skillbuilder/blob/slotsLab/instructions/slotsLab.md#note-using-ec2-instance-and-linux-academy-lab-environment-avoiding-cost-of-doing-lab).
 
 ### Pre-Requisites
 
@@ -26,8 +26,8 @@ Here are optional steps for creating your own environment by mirroring the lab b
 1. **Clone lab branch and checkout**.
 
     ```
-    git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
-    git checkout intentsLab
+    git clone --single-branch --branch slotsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
+    git checkout slotsLab
     ```
 
 2.  **Create repo for your own project**. (Here are [instructions for creating a repo](https://help.github.com/en/articles/create-a-repo).)
@@ -35,7 +35,7 @@ Here are optional steps for creating your own environment by mirroring the lab b
     * Mirror lab branch and checkout:
 
     ```
-    git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
+    git push --mirror https://github.com/AiwarriorLA/LaSlotsLab.git
     git remote set-url origin https://github.com/AiwarriorLA/LaSlotsLab.git
     ```
 3.  **Change working directory**.
@@ -46,8 +46,8 @@ Here are optional steps for creating your own environment by mirroring the lab b
     ```
     * Make new directory for lab:
     ```
-    mkdir LabIntents
-    cd LabIntents
+    mkdir LabSlots
+    cd LabSlots
     git clone https://github.com/AiwarriorLA/LaSlotsLab.git .
     ```
     * Deploy in your own AWS environment:
