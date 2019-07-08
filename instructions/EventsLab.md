@@ -25,41 +25,43 @@ The lab demonstrates you how to setup the skill called events lab and scripts th
 ### Setup 
 
 Navigate to [Alexa Skill Builder](https://github.com/linuxacademy/content-alexa-skillbuilder) and navigate to the eventsLab branch and download the Setup.sh file 
-this file contains a script that can do most of the work for setting up the lab. the instructions here will outline whats being done. 
+this file contains a script that can do most of the work for setting up the lab. The instructions here will outline whats being done. 
 
 1. Step one is to create an s3 bucket for storing the lambda code ```aws s3 mb s3://alexaskillbuilder```
 2. Clone the Branch ``` git clone --single-branch --branch $PROJECT_NAME https://github.com/linuxacademy/content-alexa-skillbuilder.git $PROJECT_NAME ```
 3. cd to the project 
 4. Zip the files ```zip -j  $PROJECT_NAME -@ < ../files.txt`` the files.text file contains the list of source code. 
-    ```lambda/custom/index.js```
-    ```lambda/custom/constants.js```
-    ```lambda/custom/helpers.js```
-    ```lambda/custom/interceptors.js```
-    ```lambda/custom/schedule.txt```
-    ```lambda/custom/package.json ```
+   1.  ```lambda/custom/index.js```
+   2.  ```lambda/custom/constants.js```
+   3.  ```lambda/custom/helpers.js```
+   4.  ```lambda/custom/interceptors.js```
+   5.  ```lambda/custom/schedule.txt```
+   6.  ```lambda/custom/package.json ```
 5. Install node modules 
-    ```cd lambda/custom``` 
-    ```npm install```
+    1. ```cd lambda/custom``` 
+    2. ```npm install```
 6. Add library files to zip 
-    ```zip -u -r  $PROJECT_NAME  lambda/custom/node_modules/```
+    1. ```zip -u -r  $PROJECT_NAME  lambda/custom/node_modules/```
 7. copy files to s3 ```aws s3 cp $PROJECT_NAME.zip s3://alexaskillbuilder/```
 8. Modify Location of code for Cloud formation Script.  This adds the location of the lambda code to the cloud formation script
-    ```sed -i '.bak' "s/CHANGEME/s3:\/\/alexaskillbuilder\/$PROJECT_NAME.zip/g" alexaskillbuilder.yaml ```
+    1. ```sed -i '.bak' "s/CHANGEME/s3:\/\/alexaskillbuilder\/$PROJECT_NAME.zip/g" alexaskillbuilder.yaml ```
 9. Create Cloud formation script 
-    ```aws cloudformation deploy --template-file ./alexaskillbuilder.yaml --stack-name $PROJECT_NAME --parameter-overrides ProjectName=$PROJECT_NAME  --capabilities CAPABILITY_IAM ```
+    1. ```aws cloudformation deploy --template-file ./alexaskillbuilder.yaml --stack-name $PROJECT_NAME --parameter-overrides ProjectName=$PROJECT_NAME  --capabilities CAPABILITY_IAM ```
 10. Get ARN from stack
-```aws cloudformation describe-stacks --stack-name $PROJECT_NAME --output text```
-```ARN=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].Outputs[?OutputKey=='AlexaSkillFunctionARN'].OutputValue" --output text 2>&1)```
-```STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].StackStatus" --output text 2>&1)```
+    1. ```aws cloudformation describe-stacks --stack-name $PROJECT_NAME --output text```
+    2. ```ARN=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].Outputs[?OutputKey=='AlexaSkillFunctionARN'].OutputValue" --output text 2>&1)```
+    3. ```STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].StackStatus" --output text 2>&1)```
 11.  Add ARN to skill.json This replaces the URI with the field with 
-```sed -i '.bak' "s/\"uri\":.*/ \"uri\": \"$ARN\"/g" $PROJECT_NAME/skill.json ```
+    1. ```sed -i '.bak' "s/\"uri\":.*/ \"uri\": \"$ARN\"/g" $PROJECT_NAME/skill.json ```
 
-Note: once you understand this script you can execute it and it will create the lab the skill and update everything but the script files that push the notifications to the skill. 
+Note: 
+1. Once you understand this script you can execute it and it will create the lab the skill and update everything but the script files that push the notifications to the skill. 
 
-you can get the data you need by running ``` ask simulate -l en-US -t "open events lab" >> output.txt ```
+You can get the data you need by running 
+1. ``` ask simulate -l en-US -t "open events lab" >> output.txt ```
 and ```cat output.txt | grep userId```
 
-once this is done past it into the media.js and order.js
+Once this is done past it into the media.js and order.js
 
 you will also need to navigate to the devloper portal build tab and click permissions. 
 At the bottom of the Permissions page, locate and copy the two Skill Messaging Client credentials, Client Id and Client Secret.
