@@ -24,13 +24,9 @@ module.exports = {
                         .then((sessionAttributes) => {
                             sessionAttributes = sessionAttributes || {};
 
-                            // console.log(JSON.stringify(sessionAttributes, null, 2));
-
                             if(Object.keys(sessionAttributes).length === 0) {
-                                // console.log('--- First Ever Visit for userId ' + handlerInput.requestEnvelope.session.user.userId);
 
                                 const initialAttributes = constants.getMemoryAttributes();
-                                // console.log(`constants.getMemoryAttributes()\n${JSON.stringify(initialAttributes)}`);
                                 sessionAttributes = initialAttributes;
 
                             }

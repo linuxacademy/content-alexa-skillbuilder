@@ -21,7 +21,7 @@ else
 fi  
                 
 
-git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git $PROJECT_NAME
+git clone --single-branch --branch $PROJECT_NAME https://github.com/linuxacademy/content-alexa-skillbuilder.git $PROJECT_NAME
 cd $PROJECT_NAME/
 zip -j  $PROJECT_NAME -@ < ../files.txt
 cd lambda/custom

@@ -3,7 +3,7 @@
 const AWS = require('aws-sdk');
 AWS.config.region = process.env.AWS_REGION || 'us-east-1';
 
-const DYNAMODB_TABLE = process.env.DYNAMODB_TABLE || 'askPingMe';
+const DYNAMODB_TABLE = process.env.DYNAMODB_TABLE || 'askeventslab';
 
 console.log('DYNAMODB_TABLE ' + DYNAMODB_TABLE);
 
@@ -11,7 +11,7 @@ module.exports = {
         'AWS': AWS,
         'DYNAMODB_TABLE': DYNAMODB_TABLE,
 
-        'invocationName': 'ping me',
+        'invocationName': 'events lab',
         'debug':true,
 
         'getMemoryAttributes': function() {

@@ -1,7 +1,3 @@
-/* eslint-disable  func-names */
-/* eslint-disable  no-console */
-
-// Ping Me skill sample to accompany alexa-cookbook sample on Proactive Events API
 
 const Alexa = require('ask-sdk');
 
