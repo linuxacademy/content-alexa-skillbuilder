@@ -42,7 +42,7 @@ sed -i '.bak' "s/CHANGEME/s3:\/\/alexaskillbuilder\/$PROJECT_NAME.zip/g" alexask
 aws cloudformation deploy --template-file ./alexaskillbuilder.yaml --stack-name $PROJECT_NAME --parameter-overrides ProjectName=$PROJECT_NAME  --capabilities CAPABILITY_IAM
 
 #Step 6 Get ARN from stack
-aws cloudformation describe-stacks --stack-name intentslab --output text
+aws cloudformation describe-stacks --stack-name $PROJECT_NAME --output text
 ARN=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].Outputs[?OutputKey=='AlexaSkillFunctionARN'].OutputValue" --output text 2>&1)
 STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].StackStatus" --output text 2>&1)
 
