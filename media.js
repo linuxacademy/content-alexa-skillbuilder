@@ -9,7 +9,7 @@ const clientID = `amzn1.application-oa2-client.72677....`;
 
 const clientSecret = `39ea4....`;
 
-const nextEvent = getNextEvent('./skill/lambda/custom/schedule.txt');
+const nextEvent = getNextEvent('./lambda/custom/schedule.txt');
 
 if(nextEvent.daysTillEvent === 1 || true) { // adjust as needed
 
