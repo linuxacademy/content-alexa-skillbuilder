@@ -24,8 +24,8 @@ The lab demonstrates you how to setup the skill called events lab and scripts th
 
 ### Setup 
 
-Navigate to [Alexa Skill Builder](https://github.com/linuxacademy/content-alexa-skillbuilder) and navigate to the eventsLab branch and download the Setup.sh file 
-this file contains a script that can do most of the work for setting up the lab. The instructions here will outline whats being done. 
+Navigate to [Alexa Skill Builder](https://github.com/linuxacademy/content-alexa-skillbuilder) and navigate to the eventsLab branch and download the Setup.sh, files.txt, AlexaSkillbuilder.yaml files from the sam directory. 
+These file contains a script that can do most of the work for setting up the lab. The instructions here will outline whats being done. 
 
 1. Step one is to create an s3 bucket for storing the lambda code ```aws s3 mb s3://alexaskillbuilder```
 2. Clone the Branch ``` git clone --single-branch --branch $PROJECT_NAME https://github.com/linuxacademy/content-alexa-skillbuilder.git $PROJECT_NAME ```
