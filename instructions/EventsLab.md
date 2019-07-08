@@ -72,7 +72,7 @@ Replace these values with the values you copied in the previous steps.
 Open media.js and locate the two settings for clientID and clientSecret.
 Replace these values with the values you copied in the previous steps. 
 
-### Running Demo
+### Running Lab
 run node order.js you will see a yellow light on your echo device! Say "Alexa, Notifications"
 
 run node media.js this will send a notification from the schedule.txt locate the next future event, and send it out multicast notification. 
