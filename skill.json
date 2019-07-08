@@ -52,7 +52,8 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom"
+          "sourceDir": "lambda/custom",
+          "uri": "** TODO: REPLACE WITH YOUR Lambda ARN after created **"
         }
       }
     },
