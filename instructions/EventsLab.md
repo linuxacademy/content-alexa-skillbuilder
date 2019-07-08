@@ -52,7 +52,7 @@ this file contains a script that can do most of the work for setting up the lab.
     2. ```ARN=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].Outputs[?OutputKey=='AlexaSkillFunctionARN'].OutputValue" --output text 2>&1)```
     3. ```STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].StackStatus" --output text 2>&1)```
 11.  Add ARN to skill.json This replaces the URI with the field with 
-    1. ```sed -i '.bak' "s/\"uri\":.*/ \"uri\": \"$ARN\"/g" $PROJECT_NAME/skill.json ```
+     1. ```sed -i '.bak' "s/\"uri\":.*/ \"uri\": \"$ARN\"/g" $PROJECT_NAME/skill.json ```
 
 Note: 
 1. Once you understand this script you can execute it and it will create the lab the skill and update everything but the script files that push the notifications to the skill. 
