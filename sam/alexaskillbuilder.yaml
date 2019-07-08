@@ -12,7 +12,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: !Sub 'AlexaSkillBuilder-${ProjectName}'
-      CodeUri: s3://alexaskillbuilder/intentslab.zip
+      CodeUri: CHANGEME
       Description: Alexa Skill Lambda function
       Handler: index.handler
       MemorySize: 128
