@@ -1,30 +1,37 @@
 /* eslint-disable  func-names */
 /* eslint-disable  no-console */
 
-// # Require the Ask SDK
+// Ping Me skill sample to accompany alexa-cookbook sample on Proactive Events API
 
-const Alexa = require('ask-sdk-core');
+const Alexa = require('ask-sdk');
 
-// # `launch request handler`
-// The launch request handler is used to start the skill
+const helpers = require('./helpers.js');
+const interceptors = require('./interceptors.js');
+const constants = require('./constants.js');
+const DYNAMODB_TABLE = constants.DYNAMODB_TABLE;
 
-const LaunchRequestHandler = {
+
+const NextVideoHandler = {
   canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
+    return (handlerInput.requestEnvelope.request.type === 'LaunchRequest'
+            || (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+                && handlerInput.requestEnvelope.request.intent.name === 'NextVideoIntent')
+    );
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Linux Academy Skill Builder Lab, you can say hello!';
+    const nextEvent = helpers.getNextEvent('schedule.txt');
+
+    const nextEventDate = new Date(nextEvent.mediaEventTime);
+        let speechText = `The next lab to take is ${nextEvent.mediaEventName} at ${nextEventDate.toDateString().slice(0, -5)} on ${nextEvent.mediaEventProvider}. `;
+    speechText += `I can notify you the day before if you visit the Alexa App and enable notifications.`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withAskForPermissionsConsentCard(['alexa::devices:all:notifications:write'])
       .getResponse();
   },
 };
-
-// # `HelloWorldIntent` 
-// Hello World Intent Handler Handles all IntentRequest and says Hello world when invoked 
 
 const HelloWorldIntentHandler = {
   canHandle(handlerInput) {
@@ -40,8 +47,7 @@ const HelloWorldIntentHandler = {
       .getResponse();
   },
 };
-// # `HelpIntentHandler`
-// The help intent handler will helpe the user when they ask for help
+
 const HelpIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -86,48 +92,61 @@ const SessionEndedRequestHandler = {
 };
 
 const ErrorHandler = {
-  canHandle() {
-    return true;
-  },
-  handle(handlerInput, error) {
-    console.log(`Error handled: ${error.message}`);
+    canHandle() {
+        return true;
+    },
+    handle(handlerInput, error) {
 
-    return handlerInput.responseBuilder
-      .speak('Sorry, I can\'t understand the command. Please say again.')
-      .reprompt('Sorry, I can\'t understand the command. Please say again.')
-      .getResponse();
-  },
+        const debug = true;
+        const stack = error.stack.split('\n');
+        let speechOutput = 'Sorry, an error occurred. ';
+
+        console.log(stack[0].slice(0, 33));
+        console.log(stack[1]);
+        console.log(stack[2]);
+        if(stack[0].slice(0, 33) === `AskSdk.DynamoDbPersistenceAdapter`) {
+            speechOutput = 'DyanamoDB error.  Be sure your table and IAM execution role are setup. ';
+        }
+
+        let errorLoc = stack[1].substring(stack[1].lastIndexOf('/') + 1, 900);
+
+        errorLoc = errorLoc.slice(0, -1);
+
+        const file = errorLoc.substring(0, errorLoc.indexOf(':'));
+        let line = errorLoc.substring(errorLoc.indexOf(':') + 1, 900);
+        line = line.substring(0, line.indexOf(':'));
+
+
+        if(debug) {
+            speechOutput +=  error.message + ' in ' + file + ', line ' + line;
+        }
+
+        return handlerInput.responseBuilder
+            .speak(speechOutput)
+            .reprompt(speechOutput)
+            .withShouldEndSession(true)
+            .getResponse();
+    },
 };
 
 
-// The intent reflector is used for interaction model testing and debugging.
-// It will simply repeat the intent the user said. You can create custom handlers
-// for your intents by defining them above, then also adding them to the request
-// handler chain below.
-const IntentReflectorHandler = {
-  canHandle(handlerInput) {
-      return handlerInput.requestEnvelope.request.type === 'IntentRequest';
-  },
-  handle(handlerInput) {
-      const intentName = handlerInput.requestEnvelope.request.intent.name;
-      const speechText = `You just triggered ${intentName}`;
-
-      return handlerInput.responseBuilder
-          .speak(speechText)
-          .getResponse();
-  }
-};
-
-const skillBuilder = Alexa.SkillBuilders.custom();
+const skillBuilder = Alexa.SkillBuilders.standard();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    LaunchRequestHandler,
+    NextVideoHandler,
     HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler,
-    IntentReflectorHandler
+    SessionEndedRequestHandler
   )
+
   .addErrorHandlers(ErrorHandler)
+  .addRequestInterceptors(interceptors.RequestPersistenceInterceptor)
+  .addRequestInterceptors(interceptors.RequestHistoryInterceptor)
+  .addResponseInterceptors(interceptors.ResponsePersistenceInterceptor)
+
+  .withTableName(DYNAMODB_TABLE)
+//  .withAutoCreateTable(true)  // created by SAM deploy
+
   .lambda();

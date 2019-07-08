@@ -5,24 +5,54 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open linux academy lab",
-            "linux academy",
-            "help"
+            "Alexa open Events Lab",
+            "hello",
+            "hello world"
           ],
-          "name": "lalabskillbuilder",
+          "name": "Events Lab",
           "description": "Sample Full Description"
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
+      "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
+    "permissions": [
+      {
+        "name": "alexa::devices:all:notifications:write"
+      }
+    ],
+    "events": {
+      "publications": [
+        {
+          "eventName": "AMAZON.OrderStatus.Updated"
+        },
+        {
+          "eventName": "AMAZON.MediaContent.Available"
+        }
+      ],
+      "endpoint": {
+        "uri": "** TODO: REPLACE WITH YOUR Lambda ARN after created **"
+      },
+      "subscriptions": [
+        {
+          "eventName": "SKILL_PROACTIVE_SUBSCRIPTION_CHANGED"
+        }
+      ],
+      "regions": {
+        "NA": {
+          "endpoint": {
+            "uri": "** TODO: REPLACE WITH YOUR Lambda ARN after created **"
+          }
+        }
+      }
+    },
+
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom",
-          "uri": "lalabskillbuilder"
+          "sourceDir": "lambda/custom"
         }
       }
     },
