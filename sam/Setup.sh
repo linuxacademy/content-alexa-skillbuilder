@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-PROJECT_NAME="usecase"
+PROJECT_NAME="useCase"
 
 #Step 1 Create Bucket for storing Lambda Code
 echo "Checking S3 bucket exists..."                                                                                                                                                                                                           
