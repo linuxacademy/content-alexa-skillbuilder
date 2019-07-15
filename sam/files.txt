@@ -1,7 +1,3 @@
 lambda/custom/index.js
-lambda/custom/constants.js
-lambda/custom/helpers.js
-lambda/custom/interceptors.js
-lambda/custom/schedule.txt
 lambda/custom/package.json
 
