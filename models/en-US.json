@@ -1,0 +1,42 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "events lab",
+      "types": [
+
+      ],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+          ]
+        },
+        {
+          "name": "NextVideoIntent",
+          "slots": [
+          ],
+          "samples": [
+            "when is the next video available",
+            "next video",
+            "next training video"
+          ]
+        }
+      ]
+    }
+  }
+}

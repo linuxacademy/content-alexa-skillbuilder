@@ -3,14 +3,12 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "use case lab",
           "examplePhrases": [
-            "Alexa open Use Case Lab",
-            "hello",
-            "hello world"
+            "Alexa open use case lab"
           ],
-          "name": "useCase Lab",
-          "description": "Sample Full Description"
+          "name": "useCase",
+          "description": "use case lab"
         }
       },
       "isAvailableWorldwide": true,
@@ -18,17 +16,25 @@
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
+
+    "apis": {
+
+      "householdList": {},
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+            "uri": ""
+        }
+      }
+    },
     "permissions": [
       {
         "name": "alexa::household:lists:read"
-      },
-      {
-        "name": "alexa::household:lists:write"
       }
     ],
     "events": {
       "endpoint": {
-         "uri": ""
+            "uri": ""
       },
       "subscriptions": [
         {
@@ -64,24 +70,7 @@
         {
           "eventName": "LIST_DELETED"
         }
-      ],
-
-      "regions": {
-        "NA": {
-          "endpoint": {
-             "uri": ""
-          }
-        }
-      }
-    },
-
-    "apis": {
-      "custom": {
-        "endpoint": {
-          "sourceDir": "lambda/custom",
-           "uri": ""
-        }
-      }
+      ]
     },
     "manifestVersion": "1.0"
   }
