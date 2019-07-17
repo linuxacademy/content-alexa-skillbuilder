@@ -1,4 +1,4 @@
-# Alexa Skill Builder List Use Case Lab with Linux Academy
+# Alexa Skill Builder List Events Lab with Linux Academy
 <img src="https://app.linuxacademy.com/assets/img/generic-course-banner.png" />
 
 ## Preparing for the Lab
