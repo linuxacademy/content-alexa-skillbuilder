@@ -19,64 +19,63 @@ Or you can use the Linux Academy lab environment [notes here](https://github.com
 
 ## Getting Started
 
-Here are optional steps for creating your own environment by mirroring the lab branch for creating your development environment for the lab.
+This Proactive events API lab will allow you you send notifications to teach you how to send notifications to your skills users alexa devices. The user will hear a chime sound that indicates a notification has arrived. The user can say, "Alexa, read my notifications and hera the details. 
+The lab demonstrates you how to setup the skill called events lab and scripts that generate the notfictions. 
 
-### Details
----
-1. **Clone lab branch and checkout**.
+### Setup 
 
-    ```
-    git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
-    git checkout intentsLab
-    ```
+Navigate to [Alexa Skill Builder](https://github.com/linuxacademy/content-alexa-skillbuilder) and navigate to the eventsLab branch and download the Setup.sh, files.txt, AlexaSkillbuilder.yaml files from the sam directory. 
+These file contains a script that can do most of the work for setting up the lab. The instructions here will outline whats being done. 
 
-2.  **Create repo for your own project**. (Here are [instructions for creating a repo](https://help.github.com/en/articles/create-a-repo).)
-    **The Commands Below are for my REPO please Change to the one you crated DO NOT JUST COPY AND PAST** 
-    * Mirror lab branch and checkout:
+1. Step one is to create an s3 bucket for storing the lambda code ```aws s3 mb s3://alexaskillbuilder```
+2. Clone the Branch ``` git clone --single-branch --branch $PROJECT_NAME https://github.com/linuxacademy/content-alexa-skillbuilder.git $PROJECT_NAME ```
+3. cd to the project 
+4. Zip the files ```zip -j  $PROJECT_NAME -@ < ../files.txt`` the files.text file contains the list of source code. 
+   1.  ```lambda/custom/index.js```
+   2.  ```lambda/custom/constants.js```
+   3.  ```lambda/custom/helpers.js```
+   4.  ```lambda/custom/interceptors.js```
+   5.  ```lambda/custom/schedule.txt```
+   6.  ```lambda/custom/package.json ```
+5. Install node modules 
+    1. ```cd lambda/custom``` 
+    2. ```npm install```
+6. Add library files to zip 
+    1. ```zip -u -r  $PROJECT_NAME  lambda/custom/node_modules/```
+7. copy files to s3 ```aws s3 cp $PROJECT_NAME.zip s3://alexaskillbuilder/```
+8. Modify Location of code for Cloud formation Script.  This adds the location of the lambda code to the cloud formation script
+    1. ```sed -i '.bak' "s/CHANGEME/s3:\/\/alexaskillbuilder\/$PROJECT_NAME.zip/g" alexaskillbuilder.yaml ```
+9. Create Cloud formation script 
+    1. ```aws cloudformation deploy --template-file ./alexaskillbuilder.yaml --stack-name $PROJECT_NAME --parameter-overrides ProjectName=$PROJECT_NAME  --capabilities CAPABILITY_IAM ```
+10. Get ARN from stack
+    1. ```aws cloudformation describe-stacks --stack-name $PROJECT_NAME --output text```
+    2. ```ARN=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].Outputs[?OutputKey=='AlexaSkillFunctionARN'].OutputValue" --output text 2>&1)```
+    3. ```STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $PROJECT_NAME --query "Stacks[0].StackStatus" --output text 2>&1)```
+11.  Add ARN to skill.json This replaces the URI with the field with 
+     1. ```sed -i '.bak' "s/\"uri\":.*/ \"uri\": \"$ARN\"/g" $PROJECT_NAME/skill.json ```
 
-    ```
-    git push --mirror https://github.com/AiwarriorLA/LaIntentsLab.git
-    git remote set-url origin https://github.com/AiwarriorLA/LaIntentsLab.git
-    ```
-3.  **Change working directory**.
-    * Remove clone:
-    ```
-    cd ../
-    rm -rf content-alexa-skillbuilder
-    ```
-    * Make new directory for lab:
-    ```
-    mkdir LabIntents
-    cd LabIntents
-    git clone https://github.com/AiwarriorLA/LaIntentsLab.git .
-    ```
-    * Deploy in your own AWS environment:
+Note: 
+1. Once you understand this script you can execute it and it will create the lab the skill and update everything but the script files that push the notifications to the skill. 
 
-    ```
-    ask deploy
-    ```
+You can get the data you need by running 
+1. ``` ask simulate -l en-US -t "open events lab" >> output.txt ```
+and ```cat output.txt | grep userId```
 
+Once this is done past it into the media.js and order.js
 
-4. **Or use ASK CLI**.
-    * Navigate to working directory — in my case, it's called `labs`:
+you will also need to navigate to the devloper portal build tab and click permissions. 
+At the bottom of the Permissions page, locate and copy the two Skill Messaging Client credentials, Client Id and Client Secret.
 
-    ```
-    mkdir labs
-    cd labs
-    ```
+open order.js and locate the three settings for clientID, clientSecret, and userId1.
+Replace these values with the values you copied in the previous steps.
 
-    * Use ASK CLI to create Alexa skill:
+Open media.js and locate the two settings for clientID and clientSecret.
+Replace these values with the values you copied in the previous steps. 
 
-    ```
-     ask new --url https://github.com/AiwarriorLA/LaIntentsLab.git  --skill-name LaLabIntents
-    ```
+### Running Lab
+run node order.js you will see a yellow light on your echo device! Say "Alexa, Notifications"
 
-    * Deploy in your own AWS environment:
-
-    ```
-    ask deploy
-    ```
----
+run node media.js this will send a notification from the schedule.txt locate the next future event, and send it out multicast notification. 
 
 ## Using Linux Academy Lab Environment
 ### Using EC2 Instance and Linux Academy Lab Environment (Avoiding Cost of Doing Lab)
@@ -100,7 +99,10 @@ Here are optional steps for creating your own environment by mirroring the lab b
     Clone the lab branch, and mirror as described in the details above:
 
     ```
-    git clone --single-branch --branch intentsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git
+    git clone --single-branch --branch eventsLab https://github.com/linuxacademy/content-alexa-skillbuilder.git eventsLab
+    cd eventsLab/sam/
+    chmod +x ./Setup.sh 
+    ./Setup.sh 
     ```
 
 3. Deploy the skill into the lab environment:
@@ -108,14 +110,10 @@ Here are optional steps for creating your own environment by mirroring the lab b
     ```
     ask deploy
     ```
+4. Modify Skill.jon, media.js order.js as defined above. 
 
-* Your lab is now configured with the endpoint set to the Linux Academy lab AWS environment. You can log in to to see the Lambda code with the information provided in the lab. The deploy above creates a skill in your developer account with an endpoint in the Linux Academy AWS environment.
 
-* If you wish to use Alexa-hosted environment, you can create a skill and select **Alexa-hosted**. Instructions are [here](https://developer.amazon.com/docs/hosted-skills/build-a-skill-end-to-end-using-an-alexa-hosted-skill.html).
-
-* If you are using Alexa-hosted and you want to follow along in the lab video, you will need to copy the JSON for the interaction model into the skill you create and the Lambda code into the `index.js` file. You will then have all the required components to follow along.
-
-* For some labs, Alexa-hosted is not an option, as we will be using features not currently offered in the Alexa Developer Console at this time.
+* For this labs, Alexa-hosted is not an option, as we will be using features not currently offered in the Alexa Developer Console at this time.
 
 **Caution:**
 
@@ -132,57 +130,9 @@ If you launch the lab inside of Linux Academy using the IP address link, you wil
 
 ---
 
-### Test That Everything Is Set Up
-
-1. To test, the skill needs to be enabled. From the developer console, open your skill and click the **Test** tab. Ensure the skill is available for testing in development.
-
-2. Or simulate verbal interaction with your skill through the command line (this might take a few moments) using the following example:
-
-	```bash
-	 ask simulate -l en-US -t "start linux academy lab"
-
-	 ✓ Simulation created for simulation id: 4a7a9ed8-94b2-40c0-b3bd-fb63d9887fa7
-	◡ Waiting for simulation response{
-	  "status": "SUCCESSFUL",
-	  ...
-	 ```
-
-3. Once the "Test" switch is enabled, your skill can be tested on devices associated with the developer account as well. Speak to Alexa from any enabled device, from your browser at [echosim.io](https://echosim.io/welcome), or through your Amazon mobile app, and say:
-
-	```text
-	Alexa, start linux academy lab
-	```
-## To Modify the Skill Details by Changing the `skill.json` File
-
-1. `./skill.json`
-
-   Change the skill name, example phrase, icons, testing instructions etc.
-
-   Remember that a lot of information is locale-specific and must be changed for each locale (e.g., en-US, en-GB, de-DE, etc.).
-
-   See the [skill manifest documentation](https://developer.amazon.com/docs/smapi/skill-manifest.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=hello-world-nodejs-V2_CLI-3&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_hello-world-nodejs-V2_CLI-3_Convert_WW_beginnersdevs&sc_segment=beginnersdevs) for more information.
-
-2. `./lambda/custom/index.js`
-
-   Modify messages and data from the source code to customize the skill.
-
-3. `./models/*.json`
-
-	Change the model definition to replace the invocation name and the sample phrase for each intent. Repeat the operation for each locale you are planning to support.
-
-4. Remember to re-deploy your skill and Lambda function for your changes to take effect.
-
-	```bash
-	ask deploy
-	```
-
-## View Annotated Source Code
-
-Alexa Skill Builder has [annotated source code](https://linuxacademy.github.io/content-alexa-skillbuilder/docs/lambda/custom/) using Docco. This provides an in-depth look at the source code to help you understand the lab.
-
 
 ### Creating Events and handling them
-In this AWS hands-on lab, we will use a fully working Alexa skill and create an skill that receives a weather event using the web interface and command line. The skill will use Lambda with Node.js. 
+In this AWS hands-on lab, we will use a fully working Alexa skill and create an skill that receives a notifications event using the web interface and command line. The skill will use Lambda with Node.js. 
 
 By the end of the lab, you will understand how to setup a custom skill to recieve an event and understand the the requirements for setting up a skill to recieve an event within AWS. This lab will guide you through the skill and event creation and handling the event in code. This lab will also walk you through viewing the logs and understanding the JSON response after the skill execution. 
 In this lab we will use proactive events and use a media-content event. 

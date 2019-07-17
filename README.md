@@ -38,7 +38,7 @@ If you found this repo from a google search please join us to learn more. [Join 
 
 [Events](./instructions/EventsLab.md)
 
-[Use Cases Prebuilt Models](./instructions/UseCaseLab.md)
+[ListEventsLab](./instructions/ListEventsLab.md)
 
 [Prebuilt Models Smart Home](./instructions/PrebuiltModelLab.md)
 
